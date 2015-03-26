@@ -9,16 +9,20 @@
         <link href="../css/estilo.css" rel="stylesheet" type="text/css"/>
     </h:head>
     <h:body>
-        <ui:insert name="header" >
-            <ui:include src="header.xhtml" />
-        </ui:insert> 
-        <ui:insert name="content" >
-            <ui:include src="contents.xhtml" />
-        </ui:insert>    
-        <ui:insert name="footer" >
-            <ui:include src="menu.xhtml" />
-        </ui:insert>
-        
+        <div class="container-fluid">
+            <div class="row">
+                <ui:insert name="header" >
+                    <ui:include src="header.xhtml" />
+                </ui:insert>
+                <ui:insert name="menu" >
+                    <ui:include src="menu.xhtml" />
+                </ui:insert>
+                <ui:insert name="contents" >
+                    <ui:include src="contents.xhtml" />
+                </ui:insert>
+            </div>
+        </div>
+
         <!-- INICIO Scripts JS -->
         <script src="../Jquery/jquery-1.11.2.min.js" type="text/javascript"></script>
         <script src="../Bootstrap/js/bootstrap.js" type="text/javascript"></script>
