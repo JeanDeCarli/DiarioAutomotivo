@@ -28,7 +28,7 @@ public class MB_Autenticacao {
     
     public String autenticacao(){
         if ("admin".equals(autBean.getUser()) && "admin".equals(autBean.getPass())) {
-            return "userAutenticated";
+            return "Pages/home";
         } else {
             return "index";
         }
