@@ -73,3 +73,13 @@ body {
   display: inline-block;
   border-radius: 50%;
 }
+
+#search .sair {
+    margin-top: 8px;
+    margin-bottom: -8px;
+}
+
+.down{
+    margin-top: 18px;
+    
+}

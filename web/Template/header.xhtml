@@ -14,14 +14,22 @@
             <nav class="navbar navbar-inverse navbar-fixed-top">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <h:outputLink class="navbar-brand">Diario Automotivo</h:outputLink>
+                        <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><span class="icon-bar"></span>
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">Diário Automotivo</a>
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
                         <h:form id="search" class="navbar-form navbar-right" prependId="false">
-                            <h:outputLabel class="navbar-text" value="Bem vindo, #{mbAut.b_Autenticacao.user}!"/>
-                            <h:commandButton class="navbar-text btn-link" value="Sair" action="#{mbAut.logoff()}"/>
                             <h:inputText pt:placeholder="Procurar..." class="form-control"/>
+                            <h:commandButton class="navbar-text btn-link sair" value="Sair" action="#{mbAut.logoff()}"/>
                         </h:form>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><h:outputLabel class="navbar-text down" value="Bem vindo, #{mbAut.b_Autenticacao.user}!"/></li>
+                            
+                        </ul>
                     </div>
                 </div>
             </nav>
