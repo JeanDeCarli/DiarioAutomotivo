@@ -1,4 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' ?>
+<!--
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
@@ -33,5 +34,55 @@
         </div>
     </h:body>
     <script src="bootstrap/js/bootstrap.js"/>
+</html>
+-->
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>Login</title>
+        <link href="Bootstrap/css/bootstrap.css" rel="stylesheet" />
+        <link href="css/login.css" rel="stylesheet" />
+        <script src="Jquery/jquery-2.1.3.min.js" />
+    </h:head>
+    <h:body>
+        <div class="container">
+            <h:form class="form-signin" role="form" id="frm" prependId="false">
+                <fieldset>
+                <legend>
+                <h2 class="form-signin-heading">Por favor efetue login</h2>
+                </legend>
+                <h:outputLabel for="inputUser" class="sr-only" value="Usuário"/>
+                <h:inputText id="inputUser" class="form-control" pt:placeholder="Usuário/E-mail" pt:required="true" pt:autofocus="true" requiredMessage="teste" value="#{mbAut.b_Autenticacao.user}"/>
+                <div class="alert alert-warning" role="alert" id="alert">
+                     <button type="button" class="close" data-dismiss="alert">x</button>                    
+                    <h:message for="inputUser"/>
+                </div>
+                <h:outputLabel for="inputPassword" class="sr-only" value="Senha"/>
+                <h:inputSecret id="inputPassword" class="form-control" pt:placeholder="Senha" pt:required="true" value="#{mbAut.b_Autenticacao.pass}"/>
+                <div class="alert alert-warning" role="alert" id="alert">
+                     <button type="button" class="close" data-dismiss="alert">x</button>                    
+                    <h:message for="inputPass"/>
+                </div>
+                <div class="checkbox">
+                    <h:outputLabel>
+                        <h:selectBooleanCheckbox value="remenber-me"/> Lembre-me
+                    </h:outputLabel>
+                </div>
+                <h:commandButton class="btn btn-lg btn-primary btn-block" type="submit" value="Efetue login" action="#{mbAut.autenticacao()}"/>
+                <br />
+                <a href="registro.xhtml">Faça uma conta</a>
+                </fieldset>
+            </h:form>
+        </div>
+    </h:body>
+    <script src="Bootstrap/js/bootstrap.js"/>
+    <script>
+        $('#alert').show('slow');
+        $('.alert').alert('close');
+    </script>
 </html>
 
