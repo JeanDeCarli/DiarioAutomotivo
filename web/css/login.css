@@ -74,6 +74,8 @@ body {
       .form-signin .checkbox {
         margin-bottom: 10px;
       }
+      .form-signin input[type="email"],
+      .form-signin input[type="number"],
       .form-signin input[type="text"],
       .form-signin input[type="password"] {
         font-size: 16px;
@@ -87,3 +89,5 @@ body {
  #edit{cursor: text;}
  
  .alert{display: none;}
+ 
+ .panel-body td {width: 100px;}
