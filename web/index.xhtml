@@ -41,7 +41,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Login</title>
         <link href="Bootstrap/css/bootstrap.css" rel="stylesheet" />
@@ -52,29 +53,52 @@
         <div class="container">
             <h:form class="form-signin" role="form" id="frm" prependId="false">
                 <fieldset>
-                <legend>
-                <h2 class="form-signin-heading">Por favor efetue login</h2>
-                </legend>
-                <h:outputLabel for="inputUser" class="sr-only" value="Usuário"/>
-                <h:inputText id="inputUser" class="form-control" pt:placeholder="Usuário/E-mail" pt:required="true" pt:autofocus="true" requiredMessage="teste" value="#{mbAut.b_Autenticacao.user}"/>
-                <div class="alert alert-warning" role="alert" id="alert">
-                     <button type="button" class="close" data-dismiss="alert">x</button>                    
-                    <h:message for="inputUser"/>
-                </div>
-                <h:outputLabel for="inputPassword" class="sr-only" value="Senha"/>
-                <h:inputSecret id="inputPassword" class="form-control" pt:placeholder="Senha" pt:required="true" value="#{mbAut.b_Autenticacao.pass}"/>
-                <div class="alert alert-warning" role="alert" id="alert">
-                     <button type="button" class="close" data-dismiss="alert">x</button>                    
-                    <h:message for="inputPass"/>
-                </div>
-                <div class="checkbox">
-                    <h:outputLabel>
-                        <h:selectBooleanCheckbox value="remenber-me"/> Lembre-me
-                    </h:outputLabel>
-                </div>
-                <h:commandButton class="btn btn-lg btn-primary btn-block" type="submit" value="Efetue login" action="#{mbAut.autenticacao()}"/>
-                <br />
-                <a href="registro.xhtml">Faça uma conta</a>
+                    <legend>
+                        <h2 class="form-signin-heading">Por favor efetue login</h2>
+                    </legend>
+                    <h:inputText id="inputUser" class="form-control" pt:placeholder="Usuário/E-mail" pt:required="true" pt:autofocus="true" value="#{mbAut.b_Autenticacao.user}"/>
+
+                    <h:inputSecret id="inputPassword" class="form-control" pt:placeholder="Senha" pt:required="true" value="#{mbAut.b_Autenticacao.pass}"/>
+
+                    <div class="checkbox">
+                        <h:outputLabel>
+                            <h:selectBooleanCheckbox value="remenber-me"/> Lembre-me
+                        </h:outputLabel>
+                    </div>
+                    <h:commandButton class="btn btn-lg btn-primary btn-block" value="Efetue login" action="#{mbAut.autenticacao()}"/>
+                        
+                    <br/>
+                    <!-- Button trigger modal -->
+                    <h:commandButton class="text-left btn-link" value="Cadastre-se" pt:data-toggle="modal" pt:data-target="#myModal"/>
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content panel panel-primary">
+                                <div class="panel-heading modal-header">
+                                    <h3 class="panel-title">Cadastre-se
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    </h3>
+                                </div>
+                                <div class="panel-body modal-body">
+                                    <h:inputText id="nome" class="form-control" pt:placeholder="Nome" pt:required="true" pt:autofocus="true"/>
+                                    <h:inputText pt:type="Number" id="idade" class="form-control" pt:placeholder="Idade" pt:required="true" pt:autofocus="true"/>
+                                    <h:outputLabel value="Sexo" class="label"/>
+                                    <h:selectOneRadio id="sexo" class="radio">
+                                        <f:selectItem itemValue="1" itemLabel="Masculino"/>
+                                        <f:selectItem itemValue="2  " itemLabel="Feminino"/>
+                                    </h:selectOneRadio>
+                                    <h:inputText pt:type="E-mail" id="email" class="form-control" pt:placeholder="E-mail" pt:required="true" pt:autofocus="true"/>
+                                    <h:inputSecret id="senha" class="form-control" pt:placeholder="Senha" pt:required="true" pt:autofocus="true"/>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </fieldset>
             </h:form>
         </div>
