@@ -9,10 +9,18 @@
             <ui:define rendered="contents.xhtml" name="contents">
                 <center>
                     <h1>
-                        Bem Vindo!
+                        Manutenção
                     </h1>
                 </center>
             </ui:define>
-        </ui:composition> 
+            <ui:define rendered="menu.xhtml" name="menu">
+                <div class="col-sm-3 col-md-2 sidebar">
+                    <ul class="nav nav-sidebar">
+                        <li><a href="../faces/Pages/automovel.xhtml">Automóvel</a></li>
+                        <li class="active"><a href="../Pages/manutencao.xhtml">Manutenções</a></li>
+                    </ul>
+                </div>
+            </ui:define>
+        </ui:composition>
     </h:body> 
 </html>	
