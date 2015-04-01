@@ -3,15 +3,78 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"   
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
     <h:body> 
         <ui:composition template="../Template/common.xhtml">
             <ui:define rendered="contents.xhtml" name="contents">
-                <center>
-                    <h1>
-                        Manutenção
-                    </h1>
-                </center>
+                <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                    <h:form class="form-horizontal" role="form" id="frm" prependId="false">
+                        <legend><h2 class="form-signin-heading">Manutenção</h2></legend>
+                        <div class="col-lg-5">
+                            <div class="form-group">
+                                <h:outputLabel for="inputManutencao" value="Nome" class="control-label col-md-4"/>
+                                <div class="col-md-8">
+                                    <h:inputText id="inputManutencao" class="form-control" pt:type="text" pt:required="true" pt:autofocus="true"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <h:outputLabel for="inputDescricao" value="Descrição" class="control-label col-md-4"/>
+                                <div class="col-md-8">
+                                    <h:inputText id="inputDescricao" class="form-control" pt:type="text" pt:required="true"/>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <h:outputLabel for="dataManutencao" value="Data da Manutenção" class="control-label col-md-4"/>
+                                <div class="col-md-8">
+                                    <h:inputText id="dataManutencao" class="form-control" pt:type="date" pt:required="true"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <h:outputLabel for="dataProxMan" value="Data da Próxima Manutenção" class="control-label col-md-4"/>
+                                <div class="col-md-8">
+                                    <h:inputText id="dataProxMan" class="form-control" pt:type="date" pt:required="true"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-1"></div>
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <h:outputLabel for="kmManutencao" value="KM da Manuteção" class="control-label col-md-4"/>
+                                <div class="col-md-8">
+                                    <h:inputText id="kmManutencao" class="form-control" pt:type="number" pt:required="true"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <h:outputLabel for="valorPeca" value="Valor da Peça" class="control-label col-md-4"/>
+                                <div class="col-md-8">
+                                    <h:inputText id="valorPeca" class="form-control" pt:type="number" pt:required="true" pt:step="0.1"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <h:outputLabel for="valorMaoObra" value="Valor da mão de Obra" class="control-label col-md-4"/>
+                                <div class="col-md-8">
+                                    <h:inputText id="valorMaoObra" class="form-control" pt:type="number" pt:required="true" pt:step="0.1"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <h:outputLabel for="valorTotal" value="Valor Total" class="control-label col-md-4"/>
+                                <div class="col-md-8">
+                                    <h:inputText id="valorTotal" class="form-control" pt:type="number" pt:required="true" pt:step="0.1"/>
+                                </div>
+                            </div>
+                        </div>    
+                        <div class="col-md-offset-9 col-md-2">
+                            <div class="navbar-right">
+                                <h:button class="btn btn-default" value="Limpar" id="limpar"/>
+                                &nbsp;
+                                <h:button class="btn btn-primary" value="Salvar" id="Salvar"/>
+                            </div>
+                        </div>
+                
+                </h:form>
+                </div>
             </ui:define>
             <ui:define rendered="menu.xhtml" name="menu">
                 <div class="col-sm-3 col-md-2 sidebar">
