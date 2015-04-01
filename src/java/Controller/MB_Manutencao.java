@@ -6,6 +6,8 @@
 package Controller;
 
 import Model.B_Manutencao;
+import java.util.ArrayList;
+import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -18,9 +20,22 @@ import javax.faces.bean.SessionScoped;
 public class MB_Manutencao {
 
     private B_Manutencao man;
-    
+    private ArrayList<B_Manutencao> mans;
     public MB_Manutencao() {
         man = new B_Manutencao();
+        mans = new ArrayList<B_Manutencao>();
+    }
+    
+    public void cadastraManutencao(){
+        mans.add(this.man);
+    }
+
+    public ArrayList<B_Manutencao> getMans() {
+        return mans;
+    }
+
+    public void setMans(ArrayList<B_Manutencao> mans) {
+        this.mans = mans;
     }
 
     public B_Manutencao getMan() {

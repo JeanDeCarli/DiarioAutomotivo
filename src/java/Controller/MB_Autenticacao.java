@@ -30,7 +30,7 @@ public class MB_Autenticacao {
         if ("admin".equals(autBean.getUser()) && "admin".equals(autBean.getPass())) {
             return "Pages/home";
         } else {
-            return "index";
+            return "../index";
         }
     }
     

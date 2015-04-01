@@ -45,14 +45,43 @@
                                 <h:inputText value="#{mbMan.man.valorTotal}" id="valorTotal" class="form-control" pt:type="number" pt:required="true" pt:step="0.1"/>
                                 <br/>
                                 <div class="navbar-right">
-                                    <h:button class="btn btn-warning" value="Limpar" id="limpar"/>
+                                    <h:button pt:type="reset" class="btn btn-warning" value="Limpar" id="limpar"/>
                                     &nbsp;
-                                    <h:button class="btn btn-success" value="Salvar" id="Salvar"/>
+                                    <h:commandButton action="#{mbMan.cadastraManutencao()}" class="btn btn-success" value="Salvar" id="Salvar"/>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            
+                        <div class="row col-lg-11 center-block">
+                            <br/>
+                            <table class="table table-hover table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Nome</th>
+                                        <th>Descrição</th>
+                                        <th>Dt. Manutenção</th>
+                                        <th>Km Manutenção</th>
+                                        <th>Dt. Prox. Manutenção</th>
+                                        <th>Km Prox. Manutenção</th>
+                                        <th>Valor Peça</th>
+                                        <th>Valor Mão de Obra</th>
+                                        <th>Valor Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <ui:repeat var="man" value="#{mbMan.mans}" >
+                                        <h:outputText value="man.nome" id="nome" />
+                                        <h:outputText value="man.descricao" id="descrição" />
+                                        <h:outputText value="man.dataDaManutencao" id="dataManutenção" />
+                                        <h:outputText value="man.dataDaProximaManutencao" id="kmManutenção" />
+                                        <h:outputText value="man.quilometragemDaManutencao" id="dataProximaManutenção" />
+                                        <h:outputText value="man.quilometragemDaProximaManutencao" id="kmProximaManutenção" />
+                                        <h:outputText value="man.valorPeca" id="valorPeca" />
+                                        <h:outputText value="man.valorMaoDeObra" id="valorMãoDeObra" />
+                                        <h:outputText value="man.valorTotal" id="valorTotal" />
+                                    </ui:repeat>
+                                </tbody>
+                            </table>
                         </div>
                     </h:form>
                 </div>

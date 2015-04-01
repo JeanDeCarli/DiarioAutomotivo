@@ -6,6 +6,7 @@
 package Controller;
 
 import Model.B_Veiculo;
+import java.util.ArrayList;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -18,9 +19,15 @@ import javax.faces.bean.SessionScoped;
 public class MB_Veiculo {
 
     private B_Veiculo veic;
+    private ArrayList<B_Veiculo> veics;
     
     public MB_Veiculo() {
         veic = new B_Veiculo();
+        veics = new ArrayList<B_Veiculo>();
+    }
+    
+    public void cadastraVeiculo(){
+        veics.add(this.veic);
     }
 
     public B_Veiculo getVeic() {
@@ -30,4 +37,13 @@ public class MB_Veiculo {
     public void setVeic(B_Veiculo veic) {
         this.veic = veic;
     }
+
+    public ArrayList<B_Veiculo> getVeics() {
+        return veics;
+    }
+
+    public void setVeics(ArrayList<B_Veiculo> veics) {
+        this.veics = veics;
+    }
+
 }
