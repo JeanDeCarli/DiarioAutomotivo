@@ -4,7 +4,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"   
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:body> 
         <ui:composition template="../Template/common.xhtml">
             <ui:define rendered="contents.xhtml" name="contents">
@@ -35,6 +36,9 @@
                                 <h:outputLabel for="kmManutencao" value="KM da Manuteção"/>
                                 <h:inputText value="#{mbMan.man.quilometragemDaManutencao}" id="kmManutencao" class="form-control" pt:type="number" pt:required="true"/>
                                 <br/>
+                                <h:outputLabel for="kmManutencaoProxima" value="KM da Próxima Manuteção"/>
+                                <h:inputText value="#{mbMan.man.quilometragemDaProximaManutencao}" id="kmManutencaoProxima" class="form-control" pt:type="number" pt:required="true"/>
+                                <br/>
                                 <h:outputLabel for="valorPeca" value="Valor da Peça"/>
                                 <h:inputText value="#{mbMan.man.valorPeca}" id="valorPeca" class="form-control" pt:type="number" pt:required="true" pt:step="0.1"/>
                                 <br/>
@@ -53,35 +57,68 @@
                         </div>
                         <div class="row col-lg-11 center-block">
                             <br/>
-                            <table class="table table-hover table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th>Nome</th>
-                                        <th>Descrição</th>
-                                        <th>Dt. Manutenção</th>
-                                        <th>Km Manutenção</th>
-                                        <th>Dt. Prox. Manutenção</th>
-                                        <th>Km Prox. Manutenção</th>
-                                        <th>Valor Peça</th>
-                                        <th>Valor Mão de Obra</th>
-                                        <th>Valor Total</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <ui:repeat var="man" value="#{mbMan.mans}" >
-                                        <h:outputText value="man.nome" id="nome" />
-                                        <h:outputText value="man.descricao" id="descrição" />
-                                        <h:outputText value="man.dataDaManutencao" id="dataManutenção" />
-                                        <h:outputText value="man.dataDaProximaManutencao" id="kmManutenção" />
-                                        <h:outputText value="man.quilometragemDaManutencao" id="dataProximaManutenção" />
-                                        <h:outputText value="man.quilometragemDaProximaManutencao" id="kmProximaManutenção" />
-                                        <h:outputText value="man.valorPeca" id="valorPeca" />
-                                        <h:outputText value="man.valorMaoDeObra" id="valorMãoDeObra" />
-                                        <h:outputText value="man.valorTotal" id="valorTotal" />
-                                    </ui:repeat>
-                                </tbody>
-                            </table>
+                            <h:dataTable value="#{mbMan.mans}" var="m" class="table table-hover table-bordered">
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Id" />
+                                    </f:facet>
+                                    <h:outputText value="1"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Nome" />
+                                    </f:facet>
+                                    <h:outputText value="#{m.nome}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Descrição" />
+                                    </f:facet>
+                                    <h:outputText value="#{m.descricao}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Data da Manutenção" />
+                                    </f:facet>
+                                    <h:outputText value="#{m.dataDaManutencao}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Data da Próxima Manutenção" />
+                                    </f:facet>
+                                    <h:outputText value="#{m.dataDaProximaManutencao}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Quilometragem da Manutenção" />
+                                    </f:facet>
+                                    <h:outputText value="#{m.quilometragemDaManutencao}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Quilometragem da Próxima Manutenção" />
+                                    </f:facet>
+                                    <h:outputText value="#{m.quilometragemDaProximaManutencao}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Valor da Peça" />
+                                    </f:facet>
+                                    <h:outputText value="#{m.valorPeca}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Valor da Mão de Obra" />
+                                    </f:facet>
+                                    <h:outputText value="#{m.valorMaoDeObra}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Valor Total" />
+                                    </f:facet>
+                                    <h:outputText value="#{m.valorTotal}"/>
+                                </h:column>
+                            </h:dataTable>
                         </div>
                     </h:form>
                 </div>

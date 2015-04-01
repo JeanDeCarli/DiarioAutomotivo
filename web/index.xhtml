@@ -28,45 +28,46 @@
 
                     <br/>
                     <!-- Button trigger modal -->
-                     
+
                     <h:commandButton class="text-left btn-link" value="Cadastre-se" pt:data-toggle="modal" pt:data-target="#myModal"/>
-                    </fieldset>
-            </h:form>  <h:form class="form" role="form" id="frm1" prependId="false">
-                    <!-- Modal -->
-                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content panel panel-primary">
-                                <div class="panel-heading modal-header">
-                                    <h3 class="panel-title">Cadastro
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                    </h3>
-                                </div>
-                                <div class="panel-body modal-body">
-                                    <h:inputText id="inputNome" class="form-control" pt:placeholder="Nome" pt:required="true" pt:autofocus="true"/>
-                                    <br />
-                                    <h:inputText pt:type="Number" id="inputIdade" class="form-control" pt:placeholder="Idade" pt:required="true"/>
-                                    <br />
-                                    <h:outputLabel value="Sexo:" class="control-label"/><span>&nbsp;&nbsp;</span>
-                                    <h:selectOneRadio id="sexo" class="radio-inline">
-                                        <f:selectItem itemValue="1" itemLabel="Masculino"/>
-                                        <f:selectItem itemValue="2" itemLabel="Feminino"/>
-                                    </h:selectOneRadio>
-                                    <br />
-                                    <br />
-                                    <h:inputText pt:type="email" id="inputEmail" class="form-control" pt:placeholder="E-mail" pt:required="true"/>
-                                    <br />
-                                    <h:inputText pt:type="text" id="inputUsuario" class="form-control" pt:placeholder="Usuário" pt:required="true"/>
-                                    <br />
-                                    <h:inputSecret pt:type="password" id="inputSenha" class="form-control" pt:placeholder="Senha" pt:required="true"/>
-                                    <br />
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                                    <button type="button" class="btn btn-primary">Salvar</button>
-                                </div>
+                </fieldset>
+            </h:form>
+            <h:form class="form" role="form" id="frm1" prependId="false">
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content panel panel-primary">
+                            <div class="panel-heading modal-header">
+                                <h3 class="panel-title">Cadastro
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                </h3>
+                            </div>
+                            <div class="panel-body modal-body">
+                                <h:inputText id="inputNome" class="form-control" pt:placeholder="Nome" pt:required="true" pt:autofocus="true"/>
+                                <br />
+                                <h:inputText pt:type="Number" id="inputIdade" class="form-control" pt:placeholder="Idade" pt:required="true"/>
+                                <br />
+                                <h:outputLabel value="Sexo:" class="control-label"/><span>&nbsp;&nbsp;</span>
+                                <h:selectOneRadio id="sexo" class="radio-inline">
+                                    <f:selectItem itemValue="1" itemLabel="Masculino"/>
+                                    <f:selectItem itemValue="2" itemLabel="Feminino"/>
+                                </h:selectOneRadio>
+                                <br />
+                                <br />
+                                <h:inputText pt:type="email" id="inputEmail" class="form-control" pt:placeholder="E-mail" pt:required="true"/>
+                                <br />
+                                <h:inputText pt:type="text" id="inputUsuario" class="form-control" pt:placeholder="Usuário" pt:required="true"/>
+                                <br />
+                                <h:inputSecret pt:type="password" id="inputSenha" class="form-control" pt:placeholder="Senha" pt:required="true"/>
+                                <br />
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                <button type="button" class="btn btn-primary">Salvar</button>
                             </div>
                         </div>
                     </div>
+                </div>
 
 
 

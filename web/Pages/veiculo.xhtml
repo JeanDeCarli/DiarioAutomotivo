@@ -63,33 +63,62 @@
                         </div>
                         <div class="row col-lg-11 center-block">
                             <br/>
-                            <table class="table table-hover table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th>Tipo</th>
-                                        <th>Marca</th>
-                                        <th>Modelo</th>
-                                        <th>Ano de Fabricaçao</th>
-                                        <th>Ano do Modelo</th>
-                                        <th>KM</th>
-                                        <th>Cor</th>
-                                        <th>Placa</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <ui:repeat var="veic" value="#{mbVeic.veics}" >
-                                        <h:outputText value="veic.tipo" id="tipo" />
-                                        <h:outputText value="veic.marca" id="marca" />
-                                        <h:outputText value="veic.modelo" id="modelo" />
-                                        <h:outputText value="veic.anoFabricacao" id="anoFabricacao" />
-                                        <h:outputText value="veic.anoModelo" id="anoModelo" />
-                                        <h:outputText value="veic.quilometragem" id="km" />
-                                        <h:outputText value="veic.cor" id="cor" />
-                                        <h:outputText value="veic.placa" id="placa" />
-                                    </ui:repeat>
-                                </tbody>
-                            </table>
+                            <h:dataTable value="#{mbVeic.veics}" var="v" class="table table-hover table-bordered">
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Id" />
+                                    </f:facet>
+                                    <h:outputText value="1"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Tipo" />
+                                    </f:facet>
+                                    <h:outputText value="#{v.marca}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Marca" />
+                                    </f:facet>
+                                    <h:outputText value="#{v.marca}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Modelo" />
+                                    </f:facet>
+                                    <h:outputText value="#{v.modelo}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Ano de Fabricação" />
+                                    </f:facet>
+                                    <h:outputText value="#{v.anoFabricacao}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Ano do Modelo" />
+                                    </f:facet>
+                                    <h:outputText value="#{v.anoModelo}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="KM" />
+                                    </f:facet>
+                                    <h:outputText value="#{v.quilometragem}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Cor" />
+                                    </f:facet>
+                                    <h:outputText value="#{v.cor}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Placa" />
+                                    </f:facet>
+                                    <h:outputText value="#{v.placa}"/>
+                                </h:column>
+                            </h:dataTable>
                         </div>
                     </h:form>
                 </div>
