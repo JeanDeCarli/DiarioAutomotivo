@@ -4,7 +4,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"   
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
     <h:head>
         <link href="../Bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <link href="../Bootstrap/css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
@@ -20,45 +21,49 @@
                         </h2>
                     </div>
                     <h:form id="frm_veiculo" prependId="false" class="form">
-                        <div class="col-lg-5">
-                            <h:outputLabel value="Tipo: " for="tipo"/>
-                            <h:selectOneMenu value="" class="form-control" id="tipo">
-                                <f:selectItem itemValue="1" itemLabel="Moto"/>
-                                <f:selectItem itemValue="2" itemLabel="Carro"/>
-                                <f:selectItem itemValue="3" itemLabel="Caminhão"/>
-                            </h:selectOneMenu>
-                            <br/>
-                            <h:outputLabel value="Marca: " for="marca"/>
-                            <h:inputText value="" class="form-control" id="marca"/>
-                            <br/>
-                            <h:outputLabel value="Modelo:  " for="modelo"/>
-                            <h:inputText value="" class="form-control" id="modelo"/>
-                            <br/>
-                            <h:outputLabel value="Ano de Fabricação: " for="anoFabricacao"/>
-                            <h:inputText value="" class="form-control" id="anoFabricacao"/>
-                            <br/>
-                        </div>
-                        <div class="col-lg-1"/>
-                        <div class="col-lg-5">
-                            <h:outputLabel value="Ano do Modelo: " for="anoModelo"/>
-                            <h:inputText value="" class="form-control" id="anoModelo"/>
-                            <br/>
-                            <h:outputLabel value="Quilometragem: " for="quilometragem"/>
-                            <h:inputText value="" class="form-control" id="quilometragem"/>
-                            <br/>
-                            <h:outputLabel value="Cor:  " for="cor"/>
-                            <h:inputText value="" class="form-control" id="cor"/>
-                            <br/>
-                            <h:outputLabel value="Placa: " for="placa"/>
-                            <h:inputText value="" class="form-control" id="placa"/>
-                            <br/>
-                            <div class="navbar-right">
-                                <h:button class="btn btn-warning" value="Limpar" id="limpar"/>
-                                &nbsp;
-                                <h:button class="btn btn-success" value="Salvar" id="Salvar"/>
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <h:outputLabel value="Tipo: " for="tipo"/>
+                                <h:selectOneMenu value="#{mbVeic.veic.tipo}" class="form-control" id="tipo" pt:required="true" pt:autofocus="true">
+                                    <f:selectItem itemValue="1" itemLabel="Moto"/>
+                                    <f:selectItem itemValue="2" itemLabel="Carro"/>
+                                    <f:selectItem itemValue="3" itemLabel="Caminhão"/>
+                                </h:selectOneMenu>
+                                <br/>
+                                <h:outputLabel value="Marca: " for="marca"/>
+                                <h:inputText value="#{mbVeic.veic.marca}" class="form-control" id="marca" pt:required="true"/>
+                                <br/>
+                                <h:outputLabel value="Modelo:  " for="modelo"/>
+                                <h:inputText value="#{mbVeic.veic.modelo}" class="form-control" id="modelo" pt:required="true"/>
+                                <br/>
+                                <h:outputLabel value="Ano de Fabricação: " for="anoFabricacao"/>
+                                <h:inputText value="#{mbVeic.veic.anoFabricacao}" class="form-control" id="anoFabricacao" pt:required="true" pt:type="number"/>
+                                <br/>
+                            </div>
+                            <div class="col-lg-1"/>
+                            <div class="col-lg-5">
+                                <h:outputLabel value="Ano do Modelo: " for="anoModelo"/>
+                                <h:inputText value="#{mbVeic.veic.anoModelo}" class="form-control" id="anoModelo" pt:required="true" pt:type="number"/>
+                                <br/>
+                                <h:outputLabel value="Quilometragem: " for="quilometragem"/>
+                                <h:inputText value="#{mbVeic.veic.quilometragem}" class="form-control" id="quilometragem" pt:required="true" pt:type="number"/>
+                                <br/>
+                                <h:outputLabel value="Cor:  " for="cor"/>
+                                <h:inputText value="#{mbVeic.veic.cor}" class="form-control" id="cor" pt:required="true"/>
+                                <br/>
+                                <h:outputLabel value="Placa: " for="placa"/>
+                                <h:inputText value="#{mbVeic.veic.placa}" class="form-control" id="placa" pt:required="true"/>
+                                <br/>
+                                <div class="navbar-right">
+                                    <h:button class="btn btn-warning" value="Limpar" id="limpar"/>
+                                    &nbsp;
+                                    <h:button class="btn btn-success" value="Salvar" id="Salvar"/>
+                                </div>
                             </div>
                         </div>
-                        
+                        <div class="row">
+                            
+                        </div>
                     </h:form>
                 </div>
             </ui:define>
