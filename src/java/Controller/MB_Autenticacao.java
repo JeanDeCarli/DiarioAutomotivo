@@ -34,9 +34,8 @@ public class MB_Autenticacao {
         }
     }
     
-    public String logoff(){
+    public void logoff(){
         FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
-        return "index";
     }
     
     public B_Autenticacao getB_Autenticacao(){

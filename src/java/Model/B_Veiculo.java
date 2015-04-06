@@ -21,6 +21,17 @@ public class B_Veiculo {
     
     public B_Veiculo() {
     }
+    
+    public B_Veiculo(B_Veiculo veic) {
+        this.setTipo(veic.getTipo());
+        this.setMarca(veic.getMarca());
+        this.setModelo(veic.getModelo());
+        this.setAnoFabricacao(veic.getAnoFabricacao());
+        this.setAnoModelo(veic.getAnoModelo());
+        this.setQuilometragem(veic.getQuilometragem());
+        this.setCor(veic.getCor());
+        this.setPlaca(veic.getPlaca());
+    }
 
     public Integer getTipo() {
         return tipo;

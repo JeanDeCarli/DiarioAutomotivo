@@ -23,6 +23,18 @@ public class B_Manutencao {
     
     public B_Manutencao() {
     }
+    public B_Manutencao(B_Manutencao man) {
+        this.setDataDaManutencao(man.dataDaManutencao);
+        this.setDataDaProximaManutencao(man.dataDaProximaManutencao);
+        this.setDescricao(man.descricao);
+        this.setNome(man.nome);
+        this.setQuilometragemDaManutencao(man.quilometragemDaManutencao);
+        this.setQuilometragemDaProximaManutencao(man.quilometragemDaProximaManutencao);
+        this.setTipo(man.tipo);
+        this.setValorMaoDeObra(man.valorMaoDeObra);
+        this.setValorPeca(man.valorPeca);
+        this.setValorTotal(man.valorTotal);
+    }
 
     public Integer getTipo() {
         return tipo;

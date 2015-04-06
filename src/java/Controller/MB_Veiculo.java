@@ -27,7 +27,20 @@ public class MB_Veiculo {
     }
     
     public void cadastraVeiculo(){
-        veics.add(this.veic);
+        B_Veiculo v = new B_Veiculo(veic);
+        veics.add(v);
+        this.limpaCampos();
+    }
+    
+    public void limpaCampos(){
+        this.veic.setAnoFabricacao(null);
+        this.veic.setAnoModelo(null);
+        this.veic.setCor(null);
+        this.veic.setMarca(null);
+        this.veic.setModelo(null);
+        this.veic.setPlaca(null);
+        this.veic.setQuilometragem(null);
+        this.veic.setTipo(null);
     }
 
     public B_Veiculo getVeic() {

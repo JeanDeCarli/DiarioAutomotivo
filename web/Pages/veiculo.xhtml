@@ -55,7 +55,7 @@
                                 <h:inputText value="#{mbVeic.veic.placa}" class="form-control" id="placa" pt:required="true"/>
                                 <br/>
                                 <div class="navbar-right">
-                                    <h:button pt:type="reset" class="btn btn-warning" value="Limpar" id="limpar"/>
+                                    <h:commandButton action="#{mbVeic.limpaCampos()}" class="btn btn-success" value="Limpar" id="Limpar" />
                                     &nbsp;
                                     <h:commandButton action="#{mbVeic.cadastraVeiculo()}" class="btn btn-success" value="Salvar" id="Salvar"/>
                                 </div>
@@ -64,12 +64,6 @@
                         <div class="row col-lg-11 center-block">
                             <br/>
                             <h:dataTable value="#{mbVeic.veics}" var="v" class="table table-hover table-bordered">
-                                <h:column>
-                                    <f:facet name="header">
-                                        <h:outputText value="Id" />
-                                    </f:facet>
-                                    <h:outputText value="1"/>
-                                </h:column>
                                 <h:column>
                                     <f:facet name="header">
                                         <h:outputText value="Tipo" />
@@ -117,6 +111,13 @@
                                         <h:outputText value="Placa" />
                                     </f:facet>
                                     <h:outputText value="#{v.placa}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="#" />
+                                    </f:facet>
+                                    <i class="glyphicon glyphicon-edit" /> &nbsp;
+                                    <i class="glyphicon glyphicon-erase" />
                                 </h:column>
                             </h:dataTable>
                         </div>

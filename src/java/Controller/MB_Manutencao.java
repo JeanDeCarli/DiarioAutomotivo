@@ -27,7 +27,22 @@ public class MB_Manutencao {
     }
     
     public void cadastraManutencao(){
-        mans.add(this.man);
+        B_Manutencao m = new B_Manutencao(man);
+        mans.add(m);
+        this.limpaCampos();
+    }
+    
+    public void limpaCampos(){
+        this.man.setDataDaManutencao(null);
+        this.man.setDataDaProximaManutencao(null);
+        this.man.setDescricao(null);
+        this.man.setNome(null);
+        this.man.setQuilometragemDaManutencao(null);
+        this.man.setQuilometragemDaProximaManutencao(null);
+        this.man.setTipo(null);
+        this.man.setValorMaoDeObra(null);
+        this.man.setValorPeca(null);
+        this.man.setValorTotal(null);
     }
 
     public ArrayList<B_Manutencao> getMans() {
