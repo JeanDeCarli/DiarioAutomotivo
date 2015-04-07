@@ -116,8 +116,13 @@
                                     <f:facet name="header">
                                         <h:outputText value="#" />
                                     </f:facet>
-                                    <i class="glyphicon glyphicon-edit" /> &nbsp;
-                                    <i class="glyphicon glyphicon-erase" />
+                                    <h:commandLink id="editar">
+                                        <span class="glyphicon glyphicon-edit"></span>
+                                    </h:commandLink>
+                                    &nbsp;
+                                    <h:commandLink id="excluir">
+                                        <span class="glyphicon glyphicon-erase"></span>
+                                    </h:commandLink>
                                 </h:column>
                             </h:dataTable>
                         </div>

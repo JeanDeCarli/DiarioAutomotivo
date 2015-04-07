@@ -32,6 +32,10 @@ public class MB_Veiculo {
         this.limpaCampos();
     }
     
+    public void excluiVeiculo(B_Veiculo v){
+        veics.remove(v);
+    }
+    
     public void limpaCampos(){
         this.veic.setAnoFabricacao(null);
         this.veic.setAnoModelo(null);
@@ -58,5 +62,4 @@ public class MB_Veiculo {
     public void setVeics(ArrayList<B_Veiculo> veics) {
         this.veics = veics;
     }
-
 }
