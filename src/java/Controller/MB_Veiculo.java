@@ -31,17 +31,18 @@ public class MB_Veiculo {
         if (edit) {
             int index = this.veics.lastIndexOf(this.veic);
             this.veics.set(index, veic);
-            this.limpaCampos();
+            //this.limpaCampos();
             this.edit = false;
         } else {
             B_Veiculo v = new B_Veiculo(veic);
             veics.add(v);
-            this.limpaCampos();
+            //this.limpaCampos();
             this.edit = false;
         }
     }
     
     public void excluiVeiculo(B_Veiculo v){
+        this.veic = v;
         int index = this.veics.lastIndexOf(v);
         this.veics.remove(index);
     }

@@ -21,15 +21,36 @@ public class MB_Manutencao {
 
     private B_Manutencao man;
     private ArrayList<B_Manutencao> mans;
+    private boolean edit = false;
+    
     public MB_Manutencao() {
         man = new B_Manutencao();
         mans = new ArrayList<B_Manutencao>();
     }
     
-    public void cadastraManutencao(){
-        B_Manutencao m = new B_Manutencao(man);
-        mans.add(m);
-        this.limpaCampos();
+    public void cadastraEeditaManutencao() {
+        if (edit) {
+            int index = this.mans.lastIndexOf(this.man);
+            this.mans.set(index, man);
+            //this.limpaCampos();
+            this.edit = false;
+        } else {
+            B_Manutencao v = new B_Manutencao(man);
+            mans.add(v);
+            //this.limpaCampos();
+            this.edit = false;
+        }
+    }
+    
+    public void excluiManutencao(B_Manutencao m){
+        this.man = m;
+        int index = this.mans.lastIndexOf(m);
+        this.mans.remove(index);
+    }
+    
+    public void editaManutencao(B_Manutencao m){
+        this.man = m;
+        edit = true;
     }
     
     public void limpaCampos(){

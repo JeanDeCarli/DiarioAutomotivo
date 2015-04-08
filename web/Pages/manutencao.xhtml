@@ -49,9 +49,7 @@
                                 <h:inputText value="#{mbMan.man.valorTotal}" id="valorTotal" class="form-control" pt:type="number" pt:required="true" pt:step="0.1"/>
                                 <br/>
                                 <div class="navbar-right">
-                                    <h:commandButton action="#{mbMan.limpaCampos()}" class="btn btn-success" value="Limpar" id="Limpar" />
-                                    &nbsp;
-                                    <h:commandButton action="#{mbMan.cadastraManutencao()}" class="btn btn-success" value="Salvar" id="Salvar"/>
+                                    <h:commandButton action="#{mbMan.cadastraEeditaManutencao()}" class="btn btn-success" value="Salvar" id="Salvar"/>
                                 </div>
                             </div>
                         </div>
@@ -72,37 +70,37 @@
                                 </h:column>
                                 <h:column>
                                     <f:facet name="header">
-                                        <h:outputText value="Data da Manutenção" />
+                                        <h:outputText value="Dt. Manutenção" />
                                     </f:facet>
                                     <h:outputText value="#{m.dataDaManutencao}"/>
                                 </h:column>
                                 <h:column>
                                     <f:facet name="header">
-                                        <h:outputText value="Data da Próxima Manutenção" />
+                                        <h:outputText value="Dt. Próx. Manutenção" />
                                     </f:facet>
                                     <h:outputText value="#{m.dataDaProximaManutencao}"/>
                                 </h:column>
                                 <h:column>
                                     <f:facet name="header">
-                                        <h:outputText value="Quilometragem da Manutenção" />
+                                        <h:outputText value="KM Manutenção" />
                                     </f:facet>
                                     <h:outputText value="#{m.quilometragemDaManutencao}"/>
                                 </h:column>
                                 <h:column>
                                     <f:facet name="header">
-                                        <h:outputText value="Quilometragem da Próxima Manutenção" />
+                                        <h:outputText value="KM Próx Manutenção" />
                                     </f:facet>
                                     <h:outputText value="#{m.quilometragemDaProximaManutencao}"/>
                                 </h:column>
                                 <h:column>
                                     <f:facet name="header">
-                                        <h:outputText value="Valor da Peça" />
+                                        <h:outputText value="Valor Peça" />
                                     </f:facet>
                                     <h:outputText value="#{m.valorPeca}"/>
                                 </h:column>
                                 <h:column>
                                     <f:facet name="header">
-                                        <h:outputText value="Valor da Mão de Obra" />
+                                        <h:outputText value="Valor Mão de Obra" />
                                     </f:facet>
                                     <h:outputText value="#{m.valorMaoDeObra}"/>
                                 </h:column>
@@ -116,11 +114,11 @@
                                     <f:facet name="header">
                                         <h:outputText value="#" />
                                     </f:facet>
-                                    <h:commandLink id="editar">
+                                    <h:commandLink id="editar" action="#{mbMan.editaManutencao(m)}">
                                         <span class="glyphicon glyphicon-edit"></span>
                                     </h:commandLink>
                                     &nbsp;
-                                    <h:commandLink id="excluir">
+                                    <h:commandLink id="excluir" action="#{mbMan.excluiManutencao(m)}">
                                         <span class="glyphicon glyphicon-erase"></span>
                                     </h:commandLink>
                                 </h:column>

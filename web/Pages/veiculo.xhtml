@@ -55,8 +55,6 @@
                                 <h:inputText value="#{mbVeic.veic.placa}" class="form-control" id="placa" pt:required="true"/>
                                 <br/>
                                 <div class="navbar-right">
-                                    <h:commandButton action="#{mbVeic.limpaCampos()}" class="btn btn-success" value="Limpar" id="Limpar" />
-                                    &nbsp;
                                     <h:commandButton action="#{mbVeic.cadastraEeditaVeiculo()}" class="btn btn-success" value="Salvar" id="Salvar"/>
                                 </div>
                             </div>
@@ -116,11 +114,11 @@
                                     <f:facet name="header">
                                         <h:outputText value="#" />
                                     </f:facet>
-                                    <h:commandLink id="editar" value="#{mbVeic.editaVeiculo(v)}">
+                                    <h:commandLink id="editar" action="#{mbVeic.editaVeiculo(v)}">
                                         <span class="glyphicon glyphicon-edit"></span>
                                     </h:commandLink>
                                     &nbsp;
-                                    <h:commandLink id="excluir" value="#{mbVeic.excluiVeiculo(v)}">
+                                    <h:commandLink id="excluir" action="#{mbVeic.excluiVeiculo(v)}">
                                         <span class="glyphicon glyphicon-erase"></span>
                                     </h:commandLink>
                                 </h:column>
