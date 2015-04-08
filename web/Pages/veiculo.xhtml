@@ -57,7 +57,7 @@
                                 <div class="navbar-right">
                                     <h:commandButton action="#{mbVeic.limpaCampos()}" class="btn btn-success" value="Limpar" id="Limpar" />
                                     &nbsp;
-                                    <h:commandButton action="#{mbVeic.cadastraVeiculo()}" class="btn btn-success" value="Salvar" id="Salvar"/>
+                                    <h:commandButton action="#{mbVeic.cadastraEeditaVeiculo()}" class="btn btn-success" value="Salvar" id="Salvar"/>
                                 </div>
                             </div>
                         </div>
@@ -116,11 +116,11 @@
                                     <f:facet name="header">
                                         <h:outputText value="#" />
                                     </f:facet>
-                                    <h:commandLink id="editar">
+                                    <h:commandLink id="editar" value="#{mbVeic.editaVeiculo(v)}">
                                         <span class="glyphicon glyphicon-edit"></span>
                                     </h:commandLink>
                                     &nbsp;
-                                    <h:commandLink id="excluir">
+                                    <h:commandLink id="excluir" value="#{mbVeic.excluiVeiculo(v)}">
                                         <span class="glyphicon glyphicon-erase"></span>
                                     </h:commandLink>
                                 </h:column>

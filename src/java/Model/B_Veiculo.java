@@ -96,5 +96,4 @@ public class B_Veiculo {
     public void setPlaca(String placa) {
         this.placa = placa;
     }
-    
 }
